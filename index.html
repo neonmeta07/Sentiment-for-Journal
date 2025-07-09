@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📜 Medieval Emotion Codex - Ancient Wisdom</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&family=UnifrakturMaguntia&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Pirata+One&family=MedievalSharp&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --parchment: #f4e4bc;
+      --old-paper: #e8d5b7;
+      --dark-parchment: #d4c4a8;
+      --ink-black: #2c1810;
+      --ink-brown: #4a3728;
+      --gold: #d4af37;
+      --dark-gold: #b8941f;
+      --copper: #b87333;
+      --bronze: #cd7f32;
+      --burgundy: #800020;
+      --forest-green: #355e3b;
+      --royal-blue: #4169e1;
+      --deep-red: #8b0000;
+      --shadow: rgba(44, 24, 16, 0.4);
+      --text-shadow: rgba(44, 24, 16, 0.6);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      background: linear-gradient(45deg, #d4c4a8, #e8d5b7, #f4e4bc);
+      background-size: 400% 400%;
+      animation: ancientShift 30s ease infinite;
+      min-height: 100vh;
+      color: var(--ink-black);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    @keyframes ancientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    /* Parchment Texture Overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(circle at 20% 20%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(160, 82, 45, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, rgba(101, 67, 33, 0.08) 0%, transparent 50%),
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 2px,
+          rgba(139, 69, 19, 0.02) 2px,
+          rgba(139, 69, 19, 0.02) 4px
+        );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Medieval Floating Elements */
+    .medieval-elements {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .medieval-element {
+      position: absolute;
+      opacity: 0.15;
+      animation: medievalFloat 40s infinite linear;
+      font-size: 2rem;
+      color: var(--ink-brown);
+    }
+
+    @keyframes medievalFloat {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.15; }
+      90% { opacity: 0.15; }
+      100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+    }
+
+    /* Main Container */
+    .manuscript-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 30px;
+      position: relative;
+      z-index: 3;
+    }
+
+    /* Medieval Header */
+    .manuscript-header {
+      background: var(--parchment);
+      border: 8px solid var(--ink-brown);
+      border-radius: 0;
+      padding: 40px;
+      text-align: center;
+      position: relative;
+      margin-bottom: 30px;
+      box-shadow: 
+        inset 0 0 50px rgba(139, 69, 19, 0.1),
+        0 10px 30px var(--shadow);
+    }
+
+    .manuscript-header::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      right: 15px;
+      bottom: 15px;
+      border: 3px solid var(--gold);
+      background: 
+        linear-gradient(45deg, transparent 30%, rgba(212, 175, 55, 0.1) 50%, transparent 70%),
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 10px,
+          rgba(212, 175, 55, 0.05) 10px,
+          rgba(212, 175, 55, 0.05) 20px
+        );
+    }
+
+    .manuscript-header::after {
+      content: '❦ ❦ ❦ ❦ ❦';
+      position: absolute;
+      bottom: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--parchment);
+      padding: 0 40px;
+      color: var(--gold);
+      font-size: 1.8rem;
+      animation: ornamentGlow 4s ease infinite;
+    }
+
+    @keyframes ornamentGlow {
+      0%, 100% { text-shadow: 0 0 10px var(--gold); }
+      50% { text-shadow: 0 0 20px var(--gold), 0 0 30px var(--dark-gold); }
+    }
+
+    .manuscript-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      color: var(--ink-black);
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px var(--text-shadow);
+      letter-spacing: 3px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      position: relative;
+    }
+
+    .manuscript-title:hover {
+      transform: scale(1.05);
+      color: var(--burgundy);
+      text-shadow: 3px 3px 6px var(--text-shadow);
+    }
+
+    .manuscript-subtitle {
+      font-family: 'Cinzel', serif;
+      font-size: 1.4rem;
+      color: var(--ink-brown);
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    /* Main Content Layout */
+    .codex-content {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 25px;
+      margin-bottom: 25px;
+    }
+
+    /* Writing Scroll */
+    .writing-scroll {
+      background: var(--parchment);
+      border: 6px solid var(--ink-brown);
+      position: relative;
+      box-shadow: 
+        inset 0 0 30px rgba(139, 69, 19, 0.1),
+        0 8px 25px var(--shadow);
+    }
+
+    .writing-scroll::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      border: 2px solid var(--gold);
+      background: 
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 28px,
+          rgba(139, 69, 19, 0.08) 29px
+        );
+      pointer-events: none;
+    }
+
+    .scroll-content {
+      padding: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .scroll-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--ink-black);
+      margin-bottom: 25px;
+      text-align: center;
+      position: relative;
+    }
+
+    .scroll-title::before,
+    .scroll-title::after {
+      content: '⚜';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold);
+      font-size: 1.5rem;
+      animation: fleurSpin 6s ease infinite;
+    }
+
+    .scroll-title::before { left: -40px; }
+    .scroll-title::after { right: -40px; }
+
+    @keyframes fleurSpin {
+      0%, 100% { transform: translateY(-50%) rotate(0deg); }
+      50% { transform: translateY(-50%) rotate(180deg); }
+    }
+
+    /* Medieval Font Selector */
+    .font-scriptorium {
+      margin-bottom: 25px;
+      padding: 20px;
+      background: rgba(139, 69, 19, 0.08);
+      border: 3px solid var(--copper);
+      position: relative;
+    }
+
+    .font-scriptorium::before {
+      content: 'Scriptorium';
+      position: absolute;
+      top: -15px;
+      left: 20px;
+      background: var(--parchment);
+      padding: 0 15px;
+      font-family: 'Cinzel', serif;
+      font-weight: 600;
+      color: var(--ink-brown);
+      font-size: 1rem;
+    }
+
+    .font-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .font-option {
+      background: var(--old-paper);
+      border: 3px solid var(--ink-brown);
+      padding: 12px 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+      font-size: 0.9rem;
+    }
+
+    .font-option::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+      transition: left 0.6s;
+    }
+
+    .font-option:hover::before {
+      left: 100%;
+    }
+
+    .font-option:hover {
+      background: var(--gold);
+      color: var(--ink-black);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px var(--shadow);
+    }
+
+    .font-option.active {
+      background: var(--burgundy);
+      color: var(--parchment);
+      border-color: var(--gold);
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(128, 0, 32, 0.4);
+    }
+
+    /* Medieval Textarea */
+    .parchment-textarea {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .textarea-scroll {
+      position: relative;
+      background: var(--old-paper);
+      border: 4px solid var(--ink-brown);
+      transition: all 0.3s ease;
+    }
+
+    .textarea-scroll:focus-within {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.3);
+      background: var(--parchment);
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 200px;
+      padding: 25px;
+      background: transparent;
+      border: none;
+      color: var(--ink-black);
+      font-size: 16px;
+      line-height: 1.7;
+      resize: vertical;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+    }
+
+    textarea:focus {
+      outline: none;
+    }
+
+    textarea::placeholder {
+      color: var(--ink-brown);
+      opacity: 0.7;
+      font-style: italic;
+    }
+
+    /* Medieval Stats */
+    .manuscript-stats {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+      background: rgba(139, 69, 19, 0.1);
+      border-top: 3px solid var(--copper);
+      font-family: 'Cinzel', serif;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      padding: 8px 12px;
+      background: var(--old-paper);
+      border: 2px solid var(--ink-brown);
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+    }
+
+    .stat-item:hover {
+      background: var(--gold);
+      transform: scale(1.05);
+    }
+
+    .stat-value {
+      color: var(--burgundy);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    /* Medieval Button */
+    .analyze-scroll {
+      width: 100%;
+      padding: 16px 40px;
+      background: linear-gradient(135deg, var(--burgundy), var(--deep-red));
+      border: 4px solid var(--gold);
+      color: var(--parchment);
+      font-size: 1.2rem;
+      font-weight: 700;
+      font-family: 'Cinzel', serif;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      box-shadow: 0 8px 20px var(--shadow);
+    }
+
+    .analyze-scroll::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
+      transition: left 0.8s;
+    }
+
+    .analyze-scroll:hover::before {
+      left: 100%;
+    }
+
+    .analyze-scroll:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 12px 30px var(--shadow);
+      background: linear-gradient(135deg, var(--deep-red), var(--burgundy));
+    }
+
+    .analyze-scroll.loading {
+      animation: scrollPulse 2s infinite;
+      pointer-events: none;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+
+    /* Medieval Sidebar */
+    .codex-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Live Emotions Tome */
+    .emotions-tome {
+      background: var(--parchment);
+      border: 5px solid var(--ink-brown);
+      padding: 20px;
+      position: relative;
+      box-shadow: 
+        inset 0 0 20px rgba(139, 69, 19, 0.1),
+        0 6px 20px var(--shadow);
+    }
+
+    .emotions-tome::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+      border: 2px solid var(--copper);
+      background: 
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 8px,
+          rgba(184, 147, 51, 0.05) 8px,
+          rgba(184, 147, 51, 0.05) 16px
+        );
+    }
+
+    .tome-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink-black);
+      text-align: center;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .emotion-runes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .emotion-rune {
+      width: 60px;
+      height: 60px;
+      border: 3px solid var(--ink-brown);
+      background: var(--old-paper);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      position: relative;
+    }
+
+    .emotion-rune:hover {
+      transform: scale(1.2) rotate(15deg);
+      background: var(--gold);
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+    }
+
+    .emotion-rune.active {
+      animation: runeGlow 2s infinite;
+      border-color: var(--gold);
+      background: var(--burgundy);
+      color: var(--parchment);
+    }
+
+    @keyframes runeGlow {
+      0%, 100% { 
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.8);
+        transform: scale(1);
+      }
+      50% { 
+        box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
+        transform: scale(1.1);
+      }
+    }
+
+    /* Medieval Mood Meter */
+    .mood-codex {
+      background: var(--parchment);
+      border: 5px solid var(--ink-brown);
+      padding: 20px;
+      position: relative;
+      box-shadow: 
+        inset 0 0 20px rgba(139, 69, 19, 0.1),
+        0 6px 20px var(--shadow);
+    }
+
+    .mood-codex::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+      border: 2px solid var(--bronze);
+    }
+
+    .meter-ancient {
+      margin-top: 15px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .meter-track {
+      width: 100%;
+      height: 14px;
+      background: var(--dark-parchment);
+      border: 2px solid var(--ink-brown);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .meter-track::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, var(--deep-red), var(--copper), var(--gold), var(--forest-green));
+      opacity: 0.6;
+    }
+
+    .meter-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--deep-red), var(--copper), var(--gold), var(--forest-green));
+      transition: width 0.6s ease;
+      position: relative;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .meter-indicator {
+      position: absolute;
+      top: -10px;
+      width: 34px;
+      height: 34px;
+      background: var(--parchment);
+      border: 4px solid var(--gold);
+      border-radius: 50%;
+      transition: left 0.6s ease;
+      box-shadow: 0 4px 15px var(--shadow);
+      animation: ancientPulse 4s ease infinite;
+    }
+
+    @keyframes ancientPulse {
+      0%, 100% { transform: scale(1); border-color: var(--gold); }
+      50% { transform: scale(1.1); border-color: var(--copper); }
+    }
+
+    .mood-label {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      font-family: 'Cinzel', serif;
+      color: var(--ink-black);
+      text-transform: capitalize;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* IMPROVED RESULTS MANUSCRIPT - COMPACT & ELEGANT */
+    .results-manuscript {
+      background: var(--parchment);
+      border: 8px solid var(--ink-brown);
+      padding: 30px;
+      margin-top: 25px;
+      position: relative;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+      box-shadow: 
+        inset 0 0 50px rgba(139, 69, 19, 0.1),
+        0 15px 40px var(--shadow);
+    }
+
+    .results-manuscript.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .results-manuscript::before {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      border: 4px solid var(--gold);
+      background: 
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 30px,
+          rgba(139, 69, 19, 0.05) 31px
+        );
+    }
+
+    /* COMPACT RESULTS HEADER */
+    .results-header {
+      text-align: center;
+      margin-bottom: 25px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .results-header h2 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--burgundy);
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px var(--text-shadow);
+      position: relative;
+    }
+
+    .results-header h2::before,
+    .results-header h2::after {
+      content: '✦';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold);
+      font-size: 1.5rem;
+      animation: starTwinkle 3s ease infinite;
+    }
+
+    .results-header h2::before { left: -50px; }
+    .results-header h2::after { right: -50px; }
+
+    @keyframes starTwinkle {
+      0%, 100% { opacity: 1; transform: translateY(-50%) scale(1); }
+      50% { opacity: 0.6; transform: translateY(-50%) scale(1.2); }
+    }
+
+    .results-header p {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      color: var(--ink-brown);
+      font-style: italic;
+    }
+
+    /* OPTIMIZED EMOTIONS LAYOUT - NO SCROLLING NEEDED */
+    .emotions-manuscript {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 25px;
+      align-items: start;
+      position: relative;
+      z-index: 2;
+      max-height: 500px; /* Limit height to prevent scrolling */
+    }
+
+    /* COMPACT EMOTION CARDS */
+    .emotions-illuminations {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      max-height: 500px;
+      overflow-y: auto;
+      padding-right: 10px;
+    }
+
+    /* Custom Scrollbar for Medieval Theme */
+    .emotions-illuminations::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .emotions-illuminations::-webkit-scrollbar-track {
+      background: var(--dark-parchment);
+      border: 1px solid var(--ink-brown);
+    }
+
+    .emotions-illuminations::-webkit-scrollbar-thumb {
+      background: var(--gold);
+      border: 1px solid var(--ink-brown);
+    }
+
+    .emotions-illuminations::-webkit-scrollbar-thumb:hover {
+      background: var(--copper);
+    }
+
+    .emotion-illumination {
+      background: var(--old-paper);
+      border: 3px solid var(--ink-brown);
+      padding: 18px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 15px var(--shadow);
+      height: fit-content;
+    }
+
+    .emotion-illumination::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--copper), var(--bronze));
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+
+    .emotion-illumination:hover::before {
+      transform: scaleX(1);
+    }
+
+    .emotion-illumination:hover {
+      transform: translateY(-5px) scale(1.02);
+      background: var(--parchment);
+      border-color: var(--gold);
+      box-shadow: 0 8px 25px var(--shadow);
+    }
+
+    .emotion-symbol {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      display: block;
+      animation: symbolFloat 5s ease-in-out infinite;
+    }
+
+    @keyframes symbolFloat {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(8deg); }
+    }
+
+    .emotion-name {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink-black);
+      margin-bottom: 8px;
+      text-transform: capitalize;
+    }
+
+    .emotion-percentage {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--burgundy);
+      margin-bottom: 8px;
+      text-shadow: 1px 1px 2px var(--text-shadow);
+    }
+
+    .emotion-scroll {
+      width: 100%;
+      height: 6px;
+      background: var(--dark-parchment);
+      border: 1px solid var(--ink-brown);
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    .emotion-scroll-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--burgundy), var(--gold));
+      transition: width 1.5s ease;
+      animation: scrollFill 2s ease-out;
+    }
+
+    @keyframes scrollFill {
+      0% { width: 0%; }
+    }
+
+    .confidence-text {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      color: var(--ink-brown);
+      font-style: italic;
+    }
+
+    /* ENHANCED MEDIEVAL CHART - BIGGER & BETTER */
+    .chart-codex {
+      background: var(--old-paper);
+      border: 4px solid var(--ink-brown);
+      padding: 20px;
+      height: fit-content;
+      position: relative;
+      box-shadow: 0 6px 20px var(--shadow);
+      max-height: 500px;
+    }
+
+    .chart-codex::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      right: 6px;
+      bottom: 6px;
+      border: 2px solid var(--copper);
+      background: 
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 5px,
+          rgba(212, 175, 55, 0.05) 5px,
+          rgba(212, 175, 55, 0.05) 10px
+        );
+    }
+
+    .chart-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--ink-black);
+      text-align: center;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .chart-title::before,
+    .chart-title::after {
+      content: '⚜';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold);
+      font-size: 1rem;
+      animation: chartOrnament 4s ease infinite;
+    }
+
+    .chart-title::before { left: -25px; }
+    .chart-title::after { right: -25px; }
+
+    @keyframes chartOrnament {
+      0%, 100% { opacity: 1; transform: translateY(-50%) rotate(0deg); }
+      50% { opacity: 0.7; transform: translateY(-50%) rotate(180deg); }
+    }
+
+    .chart-wrapper {
+      position: relative;
+      height: 320px; /* Bigger chart! */
+      width: 100%;
+      z-index: 2;
+    }
+
+    /* ENHANCED CHART LEGEND */
+    .chart-legend {
+      margin-top: 15px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      background: rgba(139, 69, 19, 0.05);
+      border: 1px solid var(--copper);
+      font-family: 'Cinzel', serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .legend-item:hover {
+      background: rgba(212, 175, 55, 0.2);
+      transform: translateX(5px);
+    }
+
+    .legend-color {
+      width: 16px;
+      height: 16px;
+      border: 2px solid var(--ink-brown);
+    }
+
+    /* Medieval Loading */
+    .loading-chamber {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--parchment), var(--old-paper));
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .loading-chamber.show {
+      display: flex;
+    }
+
+    .loading-content {
+      text-align: center;
+      color: var(--ink-black);
+    }
+
+    .ancient-spinner {
+      width: 80px;
+      height: 80px;
+      border: 6px solid var(--dark-parchment);
+      border-top: 6px solid var(--gold);
+      border-right: 6px solid var(--copper);
+      border-radius: 50%;
+      animation: ancientSpin 2s linear infinite;
+      margin: 0 auto 30px;
+      position: relative;
+    }
+
+    .ancient-spinner::before {
+      content: '⚜';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2rem;
+      color: var(--burgundy);
+      animation: runeRotate 3s ease infinite reverse;
+    }
+
+    @keyframes ancientSpin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes runeRotate {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(-360deg); }
+    }
+
+    .loading-text {
+      font-family: 'Cinzel', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .loading-subtext {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--ink-brown);
+      font-style: italic;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .codex-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .codex-sidebar {
+        order: -1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .emotions-manuscript {
+        grid-template-columns: 1fr;
+        max-height: none;
+      }
+
+      .chart-codex {
+        order: -1;
+        margin-bottom: 20px;
+      }
+
+      .emotions-illuminations {
+        max-height: none;
+        overflow-y: visible;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .manuscript-container {
+        padding: 20px;
+      }
+      
+      .manuscript-header {
+        padding: 25px;
+      }
+      
+      .scroll-content {
+        padding: 20px;
+      }
+      
+      .font-options {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .emotions-illuminations {
+        grid-template-columns: 1fr;
+      }
+
+      .codex-sidebar {
+        grid-template-columns: 1fr;
+      }
+
+      .emotion-runes {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .manuscript-stats {
+        justify-content: center;
+      }
+
+      .chart-wrapper {
+        height: 280px;
+      }
+
+      .results-header h2::before,
+      .results-header h2::after {
+        display: none;
+      }
+    }
+
+    /* Medieval Notification */
+    .medieval-notification {
+      position: fixed;
+      top: 30px;
+      right: 30px;
+      background: var(--parchment);
+      color: var(--ink-black);
+      padding: 18px 30px;
+      border: 4px solid var(--gold);
+      box-shadow: 0 8px 25px var(--shadow);
+      transform: translateX(400px);
+      transition: transform 0.4s ease;
+      z-index: 1001;
+      font-family: 'Cinzel', serif;
+      font-weight: 600;
+    }
+
+    .medieval-notification.show {
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Medieval Floating Elements -->
+  <div class="medieval-elements" id="medievalElements"></div>
+
+  <!-- Medieval Loading -->
+  <div class="loading-chamber" id="loadingOverlay">
+    <div class="loading-content">
+      <div class="ancient-spinner"></div>
+      <div class="loading-text">Consulting the Ancient Scrolls...</div>
+      <div class="loading-subtext">The scribes are deciphering your emotional essence</div>
+    </div>
+  </div>
+
+  <div class="manuscript-container">
+    <!-- Medieval Header -->
+    <div class="manuscript-header">
+      <h1 class="manuscript-title" onclick="headerClick()">📜 Medieval Emotion Codex</h1>
+      <p class="manuscript-subtitle">Ancient Wisdom Reveals the Secrets of Your Heart</p>
+    </div>
+
+    <!-- Main Codex Content -->
+    <div class="codex-content">
+      <!-- Writing Scroll -->
+      <div class="writing-scroll">
+        <div class="scroll-content">
+          <h2 class="scroll-title">Chronicle of the Soul</h2>
+
+          <!-- Medieval Font Selector -->
+          <div class="font-scriptorium">
+            <div class="font-options">
+              <div class="font-option active" onclick="changeFont('Cormorant Garamond', 'garamond')" data-font="garamond">Garamond</div>
+              <div class="font-option" onclick="changeFont('Cinzel', 'cinzel')" data-font="cinzel">Cinzel</div>
+              <div class="font-option" onclick="changeFont('UnifrakturMaguntia', 'gothic')" data-font="gothic">Gothic</div>
+              <div class="font-option" onclick="changeFont('MedievalSharp', 'medieval')" data-font="medieval">Medieval</div>
+            </div>
+          </div>
+
+          <form method="POST" id="emotionForm">
+            <div class="parchment-textarea">
+              <div class="textarea-scroll">
+                <textarea 
+                  name="entry" 
+                  id="entry"
+                  placeholder="Inscribe thy deepest thoughts upon this sacred parchment... Share thy joys, sorrows, fears, and dreams. Let thy quill flow with the ink of thy soul, that the ancient wisdom may divine the true nature of thy heart's emotions..."
+                  oninput="handleInput()"
+                  onfocus="handleFocus()"
+                  onblur="handleBlur()"
+                ></textarea>
+                <div class="manuscript-stats">
+                  <div class="stat-item">
+                    <span>📝</span>
+                    <span class="stat-value" id="wordCount">0</span>
+                    <span>words</span>
+                  </div>
+                  <div class="stat-item">
+                    <span>⚡</span>
+                    <span class="stat-value" id="charCount">0</span>
+                    <span>letters</span>
+                  </div>
+                  <div class="stat-item">
+                    <span>📖</span>
+                    <span class="stat-value" id="readTime">0</span>
+                    <span>minutes</span>
+                  </div>
+                  <div class="stat-item">
+                    <span>🎯</span>
+                    <span class="stat-value" id="sentenceCount">0</span>
+                    <span>verses</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <button type="submit" class="analyze-scroll" id="analyzeBtn">
+              🔮 Divine My Emotions
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <audio id="bgMusic" autoplay loop hidden>
+        <source id="musicSource" src="" type="audio/mpeg">
+        Your browser does not support audio.
+      </audio>
+
+      <!-- Medieval Sidebar -->
+      <div class="codex-sidebar">
+        <!-- Live Emotions Tome -->
+        <div class="emotions-tome">
+          <h3 class="tome-title">Living Runes</h3>
+          <div class="emotion-runes" id="emotionRunes">
+            <div class="emotion-rune" data-emotion="joy" title="Joy">😊</div>
+            <div class="emotion-rune" data-emotion="sadness" title="Sadness">😢</div>
+            <div class="emotion-rune" data-emotion="anger" title="Anger">😠</div>
+            <div class="emotion-rune" data-emotion="fear" title="Fear">😨</div>
+            <div class="emotion-rune" data-emotion="surprise" title="Surprise">😲</div>
+            <div class="emotion-rune" data-emotion="love" title="Love">❤️</div>
+          </div>
+        </div>
+
+        <!-- Medieval Mood Meter -->
+        <div class="mood-codex">
+          <h3 class="tome-title">Humour Balance</h3>
+          <div class="meter-ancient">
+            <div class="meter-track">
+              <div class="meter-fill" id="meterFill" style="width: 50%"></div>
+              <div class="meter-indicator" id="meterIndicator" style="left: calc(50% - 17px)"></div>
+            </div>
+            <div class="mood-label" id="moodLabel">Balanced</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- IMPROVED RESULTS MANUSCRIPT - COMPACT & NO SCROLLING -->
+    {% if emotions %}
+    <div class="results-manuscript show">
+      <div class="results-header">
+        <h2>Thy Emotional Illumination</h2>
+        <p>Behold the sacred emotions revealed within thy words</p>
+      </div>
+
+      <div class="emotions-manuscript">
+        <div class="emotions-illuminations">
+          {% for emotion, score in emotions %}
+          <div class="emotion-illumination" onclick="emotionClick(this, '{{ emotion }}')">
+            <span class="emotion-symbol">{{ emotion_emoji.get(emotion, '💭') }}</span>
+            <div class="emotion-name">{{ emotion }}</div>
+            <div class="emotion-percentage">{{ "%.1f"|format(score * 100) }}%</div>
+            <div class="emotion-scroll">
+              <div class="emotion-scroll-fill" style="width: {{ score * 100 }}%"></div>
+            </div>
+            <div class="confidence-text">{{ "%.0f"|format(score * 100) }}% certainty</div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <!-- ENHANCED MEDIEVAL CHART - BIGGER & BETTER -->
+        <div class="chart-codex">
+          <h3 class="chart-title">Sacred Diagram</h3>
+          <div class="chart-wrapper">
+            <canvas id="emotionChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    let currentFont = 'Cormorant Garamond';
+    let typingTimer;
+    let isAnalyzing = false;
+
+    // Initialize the medieval codex
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeMedievalCodex();
+      createMedievalElements();
+      {% if emotions %}
+        initializeEnhancedMedievalChart();
+        animateResults();
+      {% endif %}
+    });
+
+    function initializeMedievalCodex() {
+      console.log('📜 Initializing Medieval Emotion Codex...');
+      
+      // Load saved content
+      const savedContent = localStorage.getItem('medievalEmotionContent');
+      if (savedContent) {
+        document.getElementById('entry').value = savedContent;
+        updateStats();
+        analyzeLiveEmotions(savedContent);
+      }
+    }
+
+    // Medieval font system
+    function changeFont(fontFamily, fontKey) {
+      const fontOptions = document.querySelectorAll('.font-option');
+      fontOptions.forEach(option => option.classList.remove('active'));
+      document.querySelector(`[data-font="${fontKey}"]`).classList.add('active');
+      
+      const textarea = document.getElementById('entry');
+      textarea.style.fontFamily = fontFamily;
+      currentFont = fontFamily;
+      
+      showMedievalNotification(`✒️ Script changed to ${fontFamily}`);
+    }
+
+    // Enhanced input handling
+    function handleInput() {
+      const textarea = document.getElementById('entry');
+      const text = textarea.value;
+      
+      updateStats();
+      analyzeLiveEmotions(text);
+      
+      // Auto-save
+      clearTimeout(typingTimer);
+      typingTimer = setTimeout(() => {
+        localStorage.setItem('medievalEmotionContent', text);
+      }, 1000);
+      
+      // Auto-resize
+      textarea.style.height = 'auto';
+      textarea.style.height = Math.min(textarea.scrollHeight, 350) + 'px';
+    }
+
+    function handleFocus() {
+      const wrapper = document.querySelector('.textarea-scroll');
+      wrapper.style.transform = 'translateY(-2px)';
+    }
+
+    function handleBlur() {
+      const wrapper = document.querySelector('.textarea-scroll');
+      wrapper.style.transform = 'translateY(0)';
+    }
+
+    function updateStats() {
+      const textarea = document.getElementById('entry');
+      const text = textarea.value;
+      const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+      const characters = text.length;
+      const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0).length;
+      const readTime = Math.ceil(words / 200);
+      
+      document.getElementById('wordCount').textContent = words;
+      document.getElementById('charCount').textContent = characters;
+      document.getElementById('sentenceCount').textContent = sentences;
+      document.getElementById('readTime').textContent = readTime;
+      
+      // Animate stats
+      animateStatUpdate('wordCount');
+      animateStatUpdate('charCount');
+    }
+
+    function animateStatUpdate(elementId) {
+      const element = document.getElementById(elementId);
+      element.style.transform = 'scale(1.2)';
+      element.style.color = '#d4af37';
+      
+      setTimeout(() => {
+        element.style.transform = 'scale(1)';
+        element.style.color = '#800020';
+      }, 300);
+    }
+
+    // Medieval live emotion analysis
+    function analyzeLiveEmotions(text) {
+      const emotionKeywords = {
+        joy: ['happy', 'joy', 'excited', 'wonderful', 'amazing', 'great', 'love', 'fantastic', 'awesome', 'brilliant', 'delighted', 'thrilled', 'ecstatic', 'blessed', 'merry'],
+        sadness: ['sad', 'depressed', 'down', 'unhappy', 'miserable', 'gloomy', 'melancholy', 'sorrowful', 'heartbroken', 'devastated', 'weeping', 'mourning'],
+        anger: ['angry', 'mad', 'furious', 'irritated', 'annoyed', 'frustrated', 'rage', 'hate', 'outraged', 'livid', 'wrathful', 'indignant'],
+        fear: ['scared', 'afraid', 'terrified', 'anxious', 'worried', 'nervous', 'panic', 'frightened', 'alarmed', 'petrified', 'dread', 'apprehensive'],
+        surprise: ['surprised', 'shocked', 'amazed', 'astonished', 'stunned', 'bewildered', 'startled', 'flabbergasted', 'astounded'],
+        love: ['love', 'adore', 'cherish', 'affection', 'romantic', 'heart', 'beloved', 'darling', 'passion', 'devotion', 'tender', 'fond']
+      };
+      
+      const lowerText = text.toLowerCase();
+      const runes = document.querySelectorAll('.emotion-rune');
+      let maxEmotion = 'balanced';
+      let maxScore = 0;
+      let totalScore = 0;
+      
+      runes.forEach(rune => {
+        rune.classList.remove('active');
+        const emotion = rune.dataset.emotion;
+        const keywords = emotionKeywords[emotion] || [];
+        let score = 0;
+        
+        keywords.forEach(keyword => {
+          const matches = (lowerText.match(new RegExp(keyword, 'g')) || []).length;
+          score += matches;
+        });
+        
+        if (score > 0) {
+          rune.classList.add('active');
+          totalScore += score;
+          if (score > maxScore) {
+            maxScore = score;
+            maxEmotion = emotion;
+          }
+        }
+      });
+      
+      // Update mood meter
+      updateMoodMeter(maxEmotion, totalScore);
+    }
+
+    function updateMoodMeter(emotion, score) {
+      const meterFill = document.getElementById('meterFill');
+      const meterIndicator = document.getElementById('meterIndicator');
+      const moodLabel = document.getElementById('moodLabel');
+      
+      const emotionPositions = {
+        sadness: 15,
+        anger: 25,
+        fear: 35,
+        balanced: 50,
+        surprise: 65,
+        joy: 80,
+        love: 90
+      };
+      
+      const position = emotionPositions[emotion] || 50;
+      const percentage = Math.min(position + (score * 3), 95);
+      
+      meterFill.style.width = percentage + '%';
+      meterIndicator.style.left = `calc(${percentage}% - 17px)`;
+      moodLabel.textContent = emotion.charAt(0).toUpperCase() + emotion.slice(1);
+    }
+
+    // Form submission
+    document.getElementById('emotionForm').addEventListener('submit', function(e) {
+      const button = document.getElementById('analyzeBtn');
+      const overlay = document.getElementById('loadingOverlay');
+      
+      button.classList.add('loading');
+      button.textContent = '🌟 Divining...';
+      overlay.classList.add('show');
+      
+      showMedievalNotification('🔮 Consulting the ancient scrolls...');
+    });
+
+    // Interactive functions
+    function headerClick() {
+      const header = document.querySelector('.manuscript-title');
+      header.style.animation = 'none';
+      setTimeout(() => {
+        header.style.animation = 'bounce 1.5s ease';
+      }, 10);
+      
+      showMedievalNotification('📜 Welcome to the Medieval Emotion Codex!');
+      createMedievalBurst();
+    }
+
+    function emotionClick(card, emotion) {
+      card.style.transform = 'scale(1.05) rotateY(10deg)';
+      setTimeout(() => {
+        card.style.transform = 'translateY(-5px) scale(1.02)';
+      }, 400);
+      
+      showMedievalNotification(`⚜ ${emotion} emotion illuminated!`);
+      createFloatingSymbol(card.querySelector('.emotion-symbol').textContent);
+    }
+
+    // ENHANCED Medieval Chart initialization
+    function initializeEnhancedMedievalChart() {
+      {% if emotions %}
+      const data = {{ emotions|tojson|safe }};
+      const ctx = document.getElementById('emotionChart').getContext('2d');
+
+      // Enhanced medieval color palette
+      const medievalColors = [
+        '#800020', // Burgundy
+        '#d4af37', // Gold
+        '#b87333', // Copper
+        '#cd7f32', // Bronze
+        '#355e3b', // Forest Green
+        '#4169e1', // Royal Blue
+        '#8b0000', // Deep Red
+        '#4a3728', // Ink Brown
+        '#6b4423', // Dark Brown
+        '#8b4513'  // Saddle Brown
+      ];
+
+      // Create gradients for enhanced visual appeal
+      const gradients = data.map((item, index) => {
+        const gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, 100);
+        const baseColor = medievalColors[index % medievalColors.length];
+        gradient.addColorStop(0, baseColor);
+        gradient.addColorStop(1, baseColor + '80'); // Add transparency
+        return gradient;
+      });
+
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: data.map(item => item[0].charAt(0).toUpperCase() + item[0].slice(1)),
+          datasets: [{
+            data: data.map(item => item[1]),
+            backgroundColor: medievalColors.slice(0, data.length),
+            borderColor: '#2c1810',
+            borderWidth: 3,
+            hoverOffset: 12,
+            hoverBorderWidth: 4,
+            hoverBorderColor: '#d4af37'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '45%', // Make it a proper doughnut
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                color: '#2c1810',
+                font: {
+                  family: 'Cinzel',
+                  size: 11,
+                  weight: '600'
+                },
+                padding: 15,
+                usePointStyle: true,
+                pointStyle: 'rectRounded',
+                boxWidth: 15,
+                boxHeight: 15
+              }
+            },
+            tooltip: {
+              backgroundColor: 'rgba(244, 228, 188, 0.98)',
+              titleColor: '#2c1810',
+              bodyColor: '#2c1810',
+              borderColor: '#d4af37',
+              borderWidth: 3,
+              cornerRadius: 8,
+              titleFont: {
+                family: 'Cinzel',
+                size: 14,
+                weight: 'bold'
+              },
+              bodyFont: {
+                family: 'Cormorant Garamond',
+                size: 12,
+                weight: '500'
+              },
+              padding: 12,
+              displayColors: true,
+              callbacks: {
+                title: function(context) {
+                  return `⚜ ${context[0].label} ⚜`;
+                },
+                label: function(context) {
+                  return `Strength: ${(context.parsed * 100).toFixed(1)}%`;
+                },
+                afterLabel: function(context) {
+                  const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                  const percentage = ((context.parsed / total) * 100).toFixed(1);
+                  return `Dominance: ${percentage}%`;
+                }
+              }
+            }
+          },
+          animation: {
+            animateRotate: true,
+            animateScale: true,
+            duration: 2500,
+            easing: 'easeInOutQuart'
+          },
+          interaction: {
+            intersect: false,
+            mode: 'nearest'
+          }
+        }
+      });
+      {% if counts %}
+        setBackgroundMusic({{ counts | tojson | safe }});
+      {% endif %}
+      {% endif %}
+
+    }
+
+    function animateResults() {
+      const results = document.querySelector('.results-manuscript');
+      if (results) {
+        setTimeout(() => {
+          results.classList.add('show');
+        }, 600);
+      }
+    }
+
+    // Medieval elements system
+    function createMedievalElements() {
+      const container = document.getElementById('medievalElements');
+      const elements = ['⚜', '🏰', '⚔️', '🛡️', '👑', '📜', '🕯️', '⚱️', '🗝️', '💎', '🏺', '📿'];
+      
+      setInterval(() => {
+        if (Math.random() < 0.3) {
+          const element = document.createElement('div');
+          element.className = 'medieval-element';
+          element.textContent = elements[Math.floor(Math.random() * elements.length)];
+          element.style.left = Math.random() * 100 + '%';
+          element.style.animationDuration = (Math.random() * 15 + 25) + 's';
+          element.style.fontSize = (Math.random() * 1 + 1.5) + 'rem';
+          
+          container.appendChild(element);
+          
+          setTimeout(() => {
+            if (element.parentNode) {
+              element.parentNode.removeChild(element);
+            }
+          }, 40000);
+        }
+      }, 2000);
+    }
+
+    function createMedievalBurst() {
+      const colors = ['#800020', '#d4af37', '#b87333', '#cd7f32', '#355e3b', '#4169e1'];
+      
+      for (let i = 0; i < 25; i++) {
+        setTimeout(() => {
+          const burst = document.createElement('div');
+          burst.style.cssText = `
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            background: ${colors[Math.floor(Math.random() * colors.length)]};
+            border-radius: 0;
+            left: 50%;
+            top: 15%;
+            animation: medievalBurstEffect 3s ease-out forwards;
+            z-index: 1000;
+            pointer-events: none;
+          `;
+          
+          document.body.appendChild(burst);
+          
+          setTimeout(() => {
+            if (burst.parentNode) {
+              burst.parentNode.removeChild(burst);
+            }
+          }, 3000);
+        }, i * 80);
+      }
+    }
+
+    function createFloatingSymbol(symbol) {
+      const element = document.createElement('div');
+      element.style.cssText = `
+        position: fixed;
+        font-size: 3rem;
+        z-index: 1000;
+        pointer-events: none;
+        left: 50%;
+        top: 50%;
+        animation: medievalFloatAway 4s ease-out forwards;
+        color: #d4af37;
+        text-shadow: 2px 2px 4px rgba(44, 24, 16, 0.6);
+      `;
+      element.textContent = symbol;
+      
+      document.body.appendChild(element);
+      
+      setTimeout(() => {
+        if (element.parentNode) {
+          element.parentNode.removeChild(element);
+        }
+      }, 4000);
+    }
+
+    function showMedievalNotification(message) {
+      const notification = document.createElement('div');
+      notification.className = 'medieval-notification';
+      notification.textContent = message;
+      
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        notification.classList.add('show');
+      }, 100);
+      
+      setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+          if (notification.parentNode) {
+            notification.parentNode.removeChild(notification);
+          }
+        }, 400);
+      }, 4000);
+    }
+
+    // Add medieval CSS animations
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+        40% { transform: translateY(-30px); }
+        60% { transform: translateY(-15px); }
+      }
+      @keyframes medievalBurstEffect {
+        0% { transform: translate(-50%, -50%) scale(0) rotate(0deg); opacity: 1; }
+        100% { transform: translate(${Math.random() * 600 - 300}px, ${Math.random() * 600 - 300}px) scale(1.5) rotate(360deg); opacity: 0; }
+      }
+      @keyframes medievalFloatAway {
+        0% { transform: translate(-50%, -50%) scale(1) rotate(0deg); opacity: 1; }
+        100% { transform: translate(-50%, -400px) scale(0.3) rotate(180deg); opacity: 0; }
+      }
+    `;
+     document.head.appendChild(style);
+    
+    function setBackgroundMusic(counts) {
+      const total = Object.values(counts).reduce((a, b) => a + b, 0);
+      const positive = counts.positive || 0;
+      const negative = counts.negative || 0;
+
+        let src = "";
+
+        if (positive / total > 0.6) {
+        src = "/static/music/happy.mp3";
+        } else if (negative / total > 0.6) {
+        src = "/static/music/calm.mp3";
+        } else {
+        src = "/static/music/chill.mp3";
+        }
+
+        const audio = document.getElementById("bgMusic");
+        const source = document.getElementById("musicSource");
+
+        if (source.src !== window.location.origin + src) {
+        source.src = src;
+        audio.load();
+        audio.play();
+        }
+    }
+  </script>
+</body>
+</html>
